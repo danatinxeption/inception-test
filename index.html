@@ -1,0 +1,116 @@
+<html lang="en"> 
+  
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Vane's Test</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css"> 
+    <script src= "https://code.jquery.com/jquery-3.5.1.js"> </script> 
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+   
+</head> 
+  
+<body> 
+    <section class="header">
+        <div class="content">
+            <div class="logo"><img src="images/logo.png" alt="Logo Company"></div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <section class="title">
+        <div class="content">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa </h3>
+        </div>
+    </section> 
+   <section class="cont1">
+       <div class="content">
+           <h2 class="title">Sed ut perspiciatis unde omnis</h2>
+           <p> Ciste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, </p>
+           <p>sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et </p>
+     
+       </div>
+   </section>
+    <section class="cont2">
+       <div class="content">
+           <h2 class="title">Sed ut perspiciatis unde omnis</h2>
+           <p> Ciste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, </p>
+           <p>sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et </p>
+     
+       </div>
+   </section>
+   <section class="cont3">
+       <div class="content">
+           <h2 class="title">Sed ut perspiciatis unde omnis</h2>
+           <h3 class="title">Sed ut perspiciatis unde omnis</h3>
+             <div>
+           <p> On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.</p>
+        
+           <p>the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains </p>
+           <p> These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty  </p>
+
+           <p> On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.</p>
+             </div>
+       </div>
+   </section>
+      <section class="cont4">
+       <div class="content">
+         <h2 class="title">Sed ut perspiciatis unde omnis</h2>
+            <table id='table'> 
+                <tr> 
+                    <th>LOCATION</th> 
+                    <th>PM2.5</th> 
+                    <th>LAST UPDATED</th>       
+                </tr> 
+             </table>
+       </div>
+       <div class="textRandom">
+        <h2> Duis aute irure dolor in reprehenderit e</h2>
+    <h4>In voluptat elit esse cillum dolore eu fugiat nulla pariatpur</h4> </div>
+   </section>
+   <footer>
+      <div class="content">All Rights Reserved</div>
+   
+   </footer>
+        <!-- TABLE CONSTRUCTION-->
+       
+            <script> 
+                $(document).ready(function () { 
+  
+              
+                    $.getJSON("https://gist.githubusercontent.com/vanecendales/b83a38a4d36b3ea09e36b19ccda778bb/raw/92b39e56d34cf3b27975679602ab86a24670929b/list.json",  
+                            function (data) { 
+                        var itemList = ''; 
+
+       
+                        $.each(data, function (key, value) { 
+  
+                            itemList += '<tr>'; 
+                            itemList += '<td>' +  
+                                value.fields.city +  '' + value.fields.country +'</td>'; 
+  
+                            itemList += '<td>' +  
+                                value.fields.measurements_value + '</td>'; 
+  
+                            itemList += '<td>' +  
+                                value.fields.measurements_lastupdated + '</td>'; 
+  
+                            itemList += '</tr>'; 
+                        }); 
+                          
+                        //INSERTING ROWS INTO TABLE  
+                        $('#table').append(itemList); 
+                    }); 
+               })
+            </script> 
+    </section> 
+</body> 
+  
+</html> 
